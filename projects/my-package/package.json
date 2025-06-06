@@ -1,0 +1,16 @@
+{
+  "name": "myranapackage",
+  "version": "1.0.1",
+  "description": "my first rana nodejs project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "apis",
+    "utility"
+  ],
+  "author": "Rana",
+  "license": "ISC"
+}
