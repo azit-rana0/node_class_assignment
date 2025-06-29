@@ -1,18 +1,17 @@
 {
-  "name": "web-scapper",
+  "name": "classes",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "nodemon 27-05-2025/middlewares2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^24.9.0",
-    "xlsx": "^0.18.5"
+    "express": "^5.1.0",
+    "response-time": "^2.3.3"
   }
 }

@@ -54,7 +54,7 @@ const userDetails = [
 const package = {
   name: "my-project",
   version: "1.0.0",
-  depedencdies: {
+  dependencies: {
     axiox: "^1.0.0",
     react: "^18.5.2",
   },

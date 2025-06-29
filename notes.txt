@@ -25,7 +25,7 @@ Processes
 
 
 How to create a nodejs project
-npm init -> Answer basic questions in the CLI
+npm init => Answer basic questions in the CLI
 
 -----------------------------------------------------------------
 20-05-2025
@@ -33,7 +33,7 @@ npm init -> Answer basic questions in the CLI
 Steps to publish a package on npmjs.com
 1. Create an account/login on npmjs.com
 2. Create a project from scratch in your system npm (init)
-3. npm login -> In CLI
+3. npm login => In CLI
 4. npm publish
 
 HTTP Status Code
@@ -43,4 +43,327 @@ HTTP Status Code
 4XX => Client Error (400 => , 401 => Forbidden (Insufficent Permission/Not allowed), 404 => Not found, 429 => Too many requests)
 5XX => Server Error (500, 501, 502, 503)
 
-Web Scrapping => 
+Web Scrapping => Bot
+
+-----------------------------------------------------------------
+22-05-2025
+
+Excel file => xlsx file
+Excel sheet
+Rows & Cols
+
+
+Pre requisit for API
+1. End Point => URL (https://jsonplaceholder.typicode.com/todos/)
+2. HTTP Method => GET, POST, PUT, PATCH, DELETE etc
+
+
+-----------------------------------------------------------------
+23-05-2025
+
+GET => When server is sending data to client on their requiest (Fetching)
+POST => When client is sending data to the server (Create)
+
+npm i -g nodemon => Hot reloading for nodejs
+
+API => Connector
+
+Web API
+REST API => JSON ({id: 1, name: "abdc", image: "http://abcd.com/xyz.jpg"})
+SOAP API => XML <>  </>
+etc
+
+-----------------------------------------------------------------
+26-05-2025
+
+Middlewares
+Level of Application
+    1. Application level Middlewares
+    2. Router-level midddlewares
+
+Type of handling / predefind /functionlity
+    3. Error handling Middlewares
+    4. Build in Middlewares
+    5. Third party middlewares
+
+-----------------------------------------------------------------
+27-05-2025
+
+PATCH
+    1. Absolute path : C:\Users\azitr\Desktop\Create\backend\module_6\nodeClass\classes\27-05-2025\img\Screenshot 2025-06-21 084955.png
+    2. Relative path : /27-05-2025/img/simple.png
+
+<form method="POST" action="/register">
+</from>
+
+
+-----------------------------------------------------------------
+29-05-2025
+
+Database - MongoDB
+
+CRUD
+C -> Create
+db.users.insertOne({...})
+db.users.insertMany([{},{},{}])
+
+
+-----------------------------------------------------------------
+30-05-2025
+
+R -> Read
+
+MQL
+
+Realtional / Comparision Operators
+>   $gt
+>=  $gte
+<   $lt
+<=  $lte
+==  $eq
+!=  $ne
+
+Q. Find all the products in the database collection named "products"
+db.<collection-name>.find()
+db.products.find()
+
+Q. Find all the products whose price is 636.0354989461524
+db.products.find({
+    price: 636.0354989461524
+})
+
+Q. Find all the products whose price is 562.7914644517465
+db.products.find({
+    price: 562.7914644517465
+})
+
+Q. Find all the products whose price is less than 100
+db.products.find({
+    price: {
+        $lt: 100
+    }
+})
+
+Q. Find all the products whose price is less than 20
+db.products.find({
+    price: {
+        $lt: 20
+    }
+})
+
+Q. Find all the products whose price is less than 20 and how many products
+db.products.find({
+    price: {
+        $lt: 20
+    }
+}).count()
+
+Q. Find all the products whose price is 150 or more
+db.products.find({
+    price: {
+        $gte: 150
+    }
+})
+
+Q. find all the products which has price other than 299
+db.products.find({
+    price: {
+        $ne: 299
+    }
+})
+
+Q. Find all the products which has price 341.77937126146514
+db.products.find({
+    price: {
+        $eq: 341.77937126146514
+    }
+})
+db.products.find({
+    price: 341.77937126146514
+})
+
+
+Logical Operators
+&& $and
+|| $or
+
+
+Q. Find all the products having price in the range of 10 and 30
+db.products.find({
+    $and:[
+        {
+            price:{
+                $gt: 10
+            }
+        },
+        {
+            price: {
+                $lt: 30
+            }
+        }
+    ]
+})
+
+Q. Find all the products who has price less than 10 or greater than 800
+db.products.find({
+    $or:[
+        {
+            price: {
+                $lt: 10
+            }
+        },
+        {
+            price: {
+                $gt: 800
+            }
+        }
+    ]    
+}).sort({price: -1})
+
+.sort({price: 1}) -> descending order
+.sort({price: 1}) -> ascending order
+.sort({price: -1, rating: 1}) -> multiple product sorting
+
+Q. Find all the product whose name is Soft Bamboo Salad
+db.products.find({
+    name: "Soft Bamboo Salad"
+})
+
+
+RegExp()
+/^a{0, 10}$/
+
+g => Global (Search in whole string)
+i => Case insensitive (Capital & Small letters will be ignored)
+
+Q. Find all the products having salad in their name
+db.products.find({
+    name: /salad/gi
+})
+
+Q. Find all the products whose name is salad and price in between 10 and 50
+db.products.find({
+    $and:[
+       {
+            price: {
+                $gt: 10
+            }
+       },
+       {
+            price: {
+                $lt: 50
+            }
+       },
+       {
+            name: /salad/gi
+       }
+    ] 
+})
+
+db.products.find({
+    name: /salad/gi,
+    price: {
+        $gt: 10,
+        $lt: 50
+    }
+})
+
+db.products.find({
+    $and:[
+        {name: /salad/gi},
+        {
+            $or:[
+                {},
+                {}
+            ]
+        }
+    ]
+})
+
+find() => Find all matching items
+findOne() => Find first matching item
+
+U -> Update
+
+Q. Update the price of the product with name "salad" in it to 100
+db.<collection-name>.updateOne(findObject, updateObject)
+db.<collection-name>.updateMany(findObject, updateObject)
+
+db.products.updateOne(
+    {
+        name: /salad/gi
+    },
+    {
+        $set: {
+            price: 100
+        }
+    }
+)
+
+db.products.updateMany(
+    {
+        name: /salad/gi
+    },
+    {
+        $set: {
+            price: 100
+        }
+    }
+)
+
+db.products.deleteOne(findObject)
+db.products.deleteMany(findObject)
+
+
+-----------------------------------------------------------------
+02-05-2025
+
+Social Networking Project
+Feed module
+User module
+Settings module
+
+
+Job Application
+
+User module
+Job module => CRUD Operation on Job
+Admin module
+Settings module
+
+// /api/API_VERSION/MODULE_NAME/API_NAME
+// /api/v1/job/create
+
+{
+    title: "Software Eng - full stack",
+    location: "Mumbai",
+    minExp: 4,
+    salary: 1500000,
+    description: "Develop full stack web apps in javascript technologies",
+    company: "IBM",
+    skills: ["react", "node"]
+}
+
+{
+    title: {
+        type: String
+    },
+    location: {
+        type: String
+    },
+    minExp: {
+        type: Number
+    },
+    salary: {
+        type: Number
+    },
+    description: {
+        type: String
+    },
+    company: {
+        type: String
+    },
+    skills: {
+        type: [String]
+    }
+}
