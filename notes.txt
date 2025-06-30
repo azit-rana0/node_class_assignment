@@ -367,3 +367,8 @@ Settings module
         type: [String]
     }
 }
+
+
+atlas password: NVFB4bBj4EHPmmrt
+atlas userId: azrrana1236
+atlas url: mongodb+srv://azrrana1236:NVFB4bBj4EHPmmrt@cluster0.dwajzim.mongodb.net/
