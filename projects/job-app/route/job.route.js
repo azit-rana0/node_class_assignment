@@ -10,6 +10,6 @@ router.get("/list", jobController.listJob);
 
 router.patch("/edit", jobController.editJob);
 
-router.post("/delete", jobController.deleteJob);
+router.delete("/delete", jobController.deleteJob);
 
 module.exports = router;
