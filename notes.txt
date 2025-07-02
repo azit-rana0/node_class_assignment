@@ -385,3 +385,19 @@ db server => Manages db related activities mongodb://
 smtp server => Used to send emails (Simple Mail Transfer Protocol)
 host => localhost
 port => 1234
+
+
+-----------------------------------------------------------------
+06-05-2025
+
+File Shareing App (Google Drive / One Drive / Dropbox etc)
+File Upload
+Share a file link
+Download / access the file
+Learning : File Upload, Docker
+Revisit : Project Structure
+
+
+Modules
+1. File Module
+2. User module (Login/signup)
