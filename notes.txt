@@ -401,3 +401,23 @@ Revisit : Project Structure
 Modules
 1. File Module
 2. User module (Login/signup)
+
+
+-----------------------------------------------------------------
+09-05-2025
+
+/files/68641ac91ba8af33de72f6a4
+/files/alksdjflaksdf0asdfa0sdfs
+/files/f80a8s9dfasd0f90as9dd9dx
+
+<a target="_blank" href="DOWNLOADBLE LINK"> Click here</a>
+
+const mailer = nodemailer.createTransport({
+   host:"smtp.gmail.com",
+   port: "587",
+   secure:"true",
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.USER_PASS
+    }
+});

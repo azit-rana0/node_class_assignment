@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const fileRoutes = require("./routes/file.routes.js");
+const fileRoutes = require("./routes/file.routes");
 
 const app = express();
 
@@ -16,7 +16,7 @@ mongoose
   .catch((err) => console.log("DB Connection failed", err));
 
 // Module routes
-app.use("/api/v1/file", fileRoutes);
+app.use(fileRoutes);
 
 app.listen(8080, () => {
   console.log(`Server is up and running at port 8080`);

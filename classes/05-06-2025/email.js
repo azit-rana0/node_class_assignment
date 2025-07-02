@@ -11,6 +11,14 @@ const mailer = nodemailer.createTransport({
   host: "localhost",
   port: "1025",
   secure: false,
+  // // from smtp email server
+  // host:"smtp.gmail.com",
+  // port: "587",
+  // secure:"true",
+  // auth: {
+  //   user: process.env.EMAIL_USER,
+  //   pass: process.env.USER_PASS
+  // }
 });
 
 const mailOptions = {
