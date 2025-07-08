@@ -421,3 +421,90 @@ const mailer = nodemailer.createTransport({
         pass: process.env.USER_PASS
     }
 });
+
+docker build -t file_sharing_app:1.0
+docker run -p 8080:8080 -d file_sharing_app:1.0
+
+-----------------------------------------------------------------
+10-05-2025
+
+SDLC (Software Dev Lifecycle)
+1. Requirement Gathering
+2. Check the feassibility
+
+** UX Engg **
+1. Prototype / Wireframes
+2. UX Designs / Mockups (Adobe XD, Figma etc)
+3. Design Review
+4. Design update & finalization
+
+** Devlopement Tean **
+1. Backend Development
+2. Front Development
+
+** QA/Teaster **
+1. Testing Phase / QA (Quality Assurance)
+
+
+** Product Qwner**
+UAT (User Acceptance Testing) - Alpha
+
+** User Testing Phase ** - Beta Testing
+Feedback
+
+PRODUCTION MODE - LIVE
+
+
+eCommerse - My Store
+
+1. User Facting WebSite
+    Frontend
+    Backend
+
+2. Seller Facting WebSite/App
+    Frontend
+    Backend
+
+3. Admin Portal
+    Frontend
+    Backend
+
+4. Customer Service Portal
+    Frontend
+    Backend
+
+Scope of work - Seller + Seller (Partially)
+Module : 
+1. User Module (Difficult)
+    register
+    Login
+    Forget Password
+    Reset Password
+
+2. Product Module (Easy)
+    CRUD
+
+3. Cart Module / Wishlist Module (Moderate)
+    Add to Cart
+    Remove form cart etc
+
+4. Checkout Module / Order Module (Moderate + Very Lengthy)
+    Place order - Product info, Address Info, Payment gateway
+    Order Information - Status of your order
+
+5. Profile Module (Easy)
+    My Order
+
+6. Review Product (Moderate / Difficult - Samll module)
+    Add Review to a product
+    Edit Review to a product etc
+
+Learning 
+    Security
+        1. Authetication
+        2. Authorization
+
+    Payment Gateway Integration (Subject to account availability)
+    DB Operation
+    1. Connecting different collection
+    2. Querying different collection at once
