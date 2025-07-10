@@ -506,5 +506,12 @@ Learning
 
     Payment Gateway Integration (Subject to account availability)
     DB Operation
-    1. Connecting different collection
-    2. Querying different collection at once
+        1. Connecting different collection
+        2. Querying different collection at once
+
+    Postman collection
+    Rate limiting  
+    Encryption/Hashing etc  
+
+
+index.js -> route -> controller -> model
