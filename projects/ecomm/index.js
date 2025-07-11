@@ -1,8 +1,9 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/user.route");
-const { default: mongoose } = require("mongoose");
+const productRoutes = require("./routes/product.route");
 
 const app = express();
 
@@ -10,6 +11,10 @@ dotenv.config();
 
 // middleware
 app.use(express.json());
+
+//// IGONRE BELOW BLOCK
+const cors = require("cors");
+app.use(cors());
 
 // DB connection
 mongoose
@@ -19,6 +24,7 @@ mongoose
 
 // Moduler routes
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/product", productRoutes);
 
 const portNo = process.env.PORT_NO || 8080;
 
