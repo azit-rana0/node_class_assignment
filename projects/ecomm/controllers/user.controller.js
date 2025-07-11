@@ -1,5 +1,10 @@
-const UserModel = require("../models/user.model");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+
+const UserModel = require("../models/user.model");
+
+dotenv.config();
 
 const register = async (req, res) => {
   // Todo: Write validation for req body
@@ -34,9 +39,20 @@ const login = async (req, res) => {
       message: "Incorrect username or password",
     });
   }
+  const jwtData = {
+    id: user._id,
+    email: user.email,
+  };
+  const token = jwt.sign(jwtData, process.env.JWT_SECRET_KEY, {
+    expiresIn: "1m",
+  });
+
+  // res.cookie("jwt", token); // To set jwt in browser cookie
+
   res.json({
     success: true,
     message: "Logged in successfully",
+    token: token, // JMT (json web token)
   });
 };
 

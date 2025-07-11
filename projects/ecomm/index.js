@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/user.route");
 const productRoutes = require("./routes/product.route");
+const authMiddleware = require("./middlewares/auth");
 
 const app = express();
 
@@ -24,6 +25,7 @@ mongoose
 
 // Moduler routes
 app.use("/api/v1/user", userRoutes);
+app.use(authMiddleware); // do not move the middleware
 app.use("/api/v1/product", productRoutes);
 
 const portNo = process.env.PORT_NO || 8080;
