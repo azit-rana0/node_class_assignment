@@ -3,16 +3,34 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 
 const UserModel = require("../models/user.model");
+const validateUserInput = require("../utils/validateUserInput");
 
 dotenv.config();
 
 const register = async (req, res) => {
   // Todo: Write validation for req body
-  await UserModel.create(req.body);
-  res.json({
-    success: true,
-    message: "Dummy register API",
-  });
+  const errors = validateUserInput(req.body);
+  if (errors.length > 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Validation failed",
+      errors,
+    });
+  }
+  try {
+    const user = await UserModel.create(req.body);
+    res.status(201).json({
+      success: true,
+      message: "User registered successfully",
+      data: user,
+    });
+  } catch (err) {
+    console.error("Error in register:", err);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
 };
 
 const login = async (req, res) => {
